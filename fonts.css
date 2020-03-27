@@ -1,16 +1,16 @@
 
 @font-face {
     font-family: 'Museo Sans Cyrl';
-    src: url('fonts/webfontkit-20200326-223532/museosanscyrl-webfont.woff') format('woff2'),
-         url('fonts/webfontkit-20200326-223532/museosanscyrl-webfont.woff2') format('woff');
+    src: url('fonts/museosanscyrl-webfont.woff') format('woff2'),
+         url('fonts/museosanscyrl-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PT Serif';
-    src: url('fonts/webfontkit-20200326-224006/ptf75f-webfont.woff') format('woff2'),
-         url('fonts/webfontkit-20200326-224006/ptf75f-webfont.woff2') format('woff');
+    src: url('fonts/ptf75f-webfont.woff') format('woff2'),
+         url('fonts/ptf75f-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 }
