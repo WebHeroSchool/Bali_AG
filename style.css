@@ -1,7 +1,42 @@
 
-
+.body {
+	color: #fff;
+	margin: 0;/*Убираем поля*/
+	box-sizing: border-box;
+    background: url(images/фон.png);
+    background-size: cover;/*Картинку растягиваем на весь экран*/
+	max-width: 1920px;
+	height: 100vh;
+}
+.wrap {
+	height: 185px;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	margin: auto;
+}
+.header {
+	flex: 1;
+	padding-left: 11vh;
+}
+.header__logo {
+    width: 18%;
+    height: 50%;
+}
+.menu {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
 .menu__link {
 	font-family: 'Museo Sans Cyrl';
+	text-decoration: none;
+    font-size: 18px;
+	color: #fff;
+	margin-right: 30px;
+}
+.menu__link:nth-of-type(5) {
+    margin-right: 0px;
 }
 .main__title {
     font-family: 'PT Serif';
