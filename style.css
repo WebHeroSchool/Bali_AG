@@ -1,52 +1,316 @@
-
+/*Сброс параметров поля, границы, отступа*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box; /*В расчет ширины/высоты контента берутся поля и границы*/
+}
 .body {
-	color: #fff;
-	margin: 0;/*Убираем поля*/
-	box-sizing: border-box;
-    background: url(images/фон.png);
-    background-size: cover;/*Картинку растягиваем на весь экран*/
-	max-width: 1920px;
-	height: 100vh;
+	overflow: hidden; /*Картинка отображается только внутри элемента, за пределами скрывается*/
 }
 .wrap {
-	height: 185px;
-	width: 90%;
+	color: #fff;
+	background: url(images/фон.png) no-repeat center; /*Адрес картинки, картинка не повторяется и центрируется*/
+    background-size: cover;/*Картинку растягиваем на весь экран*/
+    height: 100vh; /*Высота растягивается на всю отображаемую высоту экрана*/
+}
+
+/*Свойства шапки страницы*/
+.header {
 	display: flex;
 	align-items: center;
-	margin: auto;
+	justify-content: space-between;
+	height: 230px;
+	padding: 0 4.5vw 0 10.4vw;
+	margin-bottom: 47px;
 }
-.header {
-	flex: 1;
-	padding-left: 11vh;
-}
-.header__logo {
-    width: 18%;
-    height: 50%;
-}
-.menu {
-	flex: 1;
-	display: flex;
-	justify-content: flex-end;
+.header__logo img {
+    max-width: 100%;
 }
 .menu__link {
-	font-family: 'Museo Sans Cyrl';
-	text-decoration: none;
-    font-size: 18px;
-	color: #fff;
-	margin-right: 30px;
+	font: normal 22px/26px 'Museo Sans Cyrl';
+	margin-right: 33.73px; /*Устанавливает расстояние между пунктами*/
+	text-decoration: none;/*Убираем подчерквание у ссылки*/
+    color: #fff;
+    cursor: pointer; /*Изменение курсора, при наведении на пункты меню*/
 }
-.menu__link:nth-of-type(5) {
-    margin-right: 0px;
+
+/*Свойства для бургер-меню*/
+.burger {
+	display: none;
+	position: relative;
+	height: 20px;
+	width: 26px;
+	cursor: pointer; /*Изменение курсора*/
+}
+.burger span {
+	display: block;
+	position: absolute;
+   	height: 3px;
+	width: 100%;
+	background: #fff;
+}
+.burger__line_first {
+	top: 0;
+}
+.burger__line_second, .burger__line_third {
+	top: 8px;
+}
+.burger__line_fourth {
+	top: 16px;
+}
+
+/*Свойства основного контента*/
+.main {
+	display: flex;
+}
+.main__content {
+	flex: 1 1 50%;
+	padding-left: 10.5vw;
+}
+.wrap-title {
+	position: relative;
 }
 .main__title {
-    font-family: 'PT Serif';
+    font: normal 280px/371px 'PT Serif';
+    opacity: 0.5;/*Делаем шрифт полупрозрачным*/
+    width: 528px;
+    height: 373px;
 }
 .main__subtitle {
-	font-family: 'PT Serif';
+	font: normal 98px/130px 'PT Serif';
+    width: 467px;
+    height: 131px;
+    position: absolute;
+    top: 230px;/*Позиционируем заголовок*/
+    left: 80px;
 }
 .main__text {
-    font-family: 'Museo Sans Cyrl';
+    font: normal 22px/26px 'Museo Sans Cyrl';
+    width: 560px;
+    padding-top: 4px;
+    padding-left: 1vw;
+    margin-bottom: 40px; 
+}
+.wrap-button {
+	padding-left: 1vw;
 }
 .main__button {
-    font-family: 'Museo Sans Cyrl';
+    font: 22px/26px 'Museo Sans Cyrl';
+    background: #D4BEA3; /*Цвет кнопки*/
+    color: #fff;
+    width: 294px;/*Ширина кнопки*/
+    height: 62px;/*Высота кнопки*/
+    border-radius: 48px;/*Скругление кнопки*/
+}
+.main__wrap {
+	flex: 1 1 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-top: 90px;
+}
+.main__wrap-one {
+	margin-right: 33.73px; /*Отступ, который отталкивает картинку справа*/
+}
+.main__wrap-two {
+	margin-right: 33.73px;
+}
+.main__wrap-three {
+	margin-right: 0px;
+}
+.main__wrap-img {
+	width: 100%
+	height: 100%;
+}
+
+/*Медиа запросы*/
+@media (min-width: 1201px) and (max-width: 1650px) {
+.header {
+	height: 166px;/*Меняем высоту header*/
+	padding: 0 4vw 0 10.4vw;
+	margin-bottom: 32px;
+}
+.menu__link {
+	font: normal 16px/19px 'Museo Sans Cyrl';
+	margin-right: 24px;
+}
+.header__logo {
+    max-width: 104px;/*Устанавливаем максимальную ширину картинки логотипа при данных параметрах экрана*/
+    max-height: 39px;/*Устанавливаем максимальную высоту картинки логотипа*/
+}
+.main__title {
+    font: normal 200px/265px 'PT Serif';
+    width: 375px;
+    height: 265px;
+}
+.main__subtitle {
+	font: normal 70px/93px 'PT Serif';
+    width: 332px;
+    height: 93px;
+    top: 160px;/*Изменяем параметры позиционирования заголовка*/
+    left: 60px;
+}
+.main__text {
+    font: normal 16px/19px 'Museo Sans Cyrl';
+    width: 410px;
+    margin-bottom: 25px;
+}
+.main__button {
+    font: 16px/19px 'Museo Sans Cyrl';
+    width: 209px; /*Изменяем размер кнопки*/
+    height: 44px;
+}
+.main__wrap {
+	padding-top: 62px;
+}
+.main__wrap-one { /*Изменяем размер картинки*/
+    width: 226px; 
+	height: 300px;
+	margin-right: 24px;
+}
+.main__wrap-two { /*Изменяем размер картинки*/
+	width: 203px; 
+	height: 270px;
+	margin-right: 24px;
+}
+.main__wrap-three { /*Изменяем размер картинки*/
+	width: 150px; 
+	height: 270px;
+}
+.main__wrap-img {
+	width: 100%;
+	height: 100%;
+}
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+.header {
+	height: 166px;
+	padding: 0 1vw 0 3.8vw;
+	margin-bottom: 32px;
+}
+.menu__link {
+	font: normal 16px/19px 'Museo Sans Cyrl';
+	margin-right: 24px;
+}
+.header__logo {
+    max-width: 104px;
+    max-height: 39px;
+    overflow: hidden;
+}
+.main__content {
+	padding-left: 4vw;
+}
+.main__title {
+    font: normal 200px/265px 'PT Serif';
+    width: 375px;
+    height: 265px;
+}
+.main__subtitle {
+	font: normal 70px/93px 'PT Serif';
+    width: 332px;
+    height: 93px;
+    top: 165px;
+    left: 60px;
+}
+.main__text {
+    font: normal 16px/19px 'Museo Sans Cyrl';
+    width: 410px;
+    margin-bottom: 27px;
+    padding-left: 1.5vw;
+}
+.wrap-button {
+	padding-left: 1.5vw;
+}
+.main__button {
+    font: 16px/19px 'Museo Sans Cyrl';
+    width: 209px;
+    height: 44px;
+}
+.main__wrap {
+	padding-top: 62px;
+	padding-left: 6vw;
+}
+.main__wrap-one {
+	width: 226px; 
+	height: 300px;
+	margin-right: 24px;
+}
+.main__wrap-two {
+	width: 203px; 
+	height: 270px;
+	margin-right: 24px;
+}
+.main__wrap-three {
+	width: 150px; 
+	height: 270px;
+	margin-left: 0px;
+}
+.main__wrap-img {
+	width: 100%;
+	height: 100%;
+}
+}
+@media (max-width: 768px) {
+.header {
+	height: 120px;
+	padding: 0 5vw 0 11vw;
+	margin-bottom: 20px;
+}
+.header__logo {
+    max-width: 104px;
+    max-height: 39px;
+    overflow: hidden;
+}
+.header__menu {
+	padding-top: 15px;
+	padding-right: 4vw;
+}
+.menu { /*Скрываем меню*/
+    display: none;
+}
+.burger {  /*Делаем бургер-меню видимым*/
+	display: block;
+}
+.main__content {
+	padding-left: 4vw;
+	padding-right: 4vw;
+}
+.wrap-title {
+    margin: 0 auto;
+    width: 345px;
+}
+.main__title {
+    font: normal 170px/225px 'PT Serif';
+    width: 318px;
+    height: 226px;
+}
+.main__subtitle {
+	font: normal 60px/79px 'PT Serif';
+    width: 284px;
+    height: 80px;
+    top: 147px;
+    left: 60px;
+}
+.main__text {
+    font: normal 18px/22px 'Museo Sans Cyrl';
+    width: 296px;
+    padding-top: 37px;
+    margin: 0 auto 35px auto;
+}
+.main__text p {
+    text-align: center;
+}
+.wrap-button {
+	padding-left: 0;
+	text-align: center;
+}
+.main__button {
+    font: 16px/19px 'Museo Sans Cyrl';
+    width: 209px;
+    height: 44px;
+}
+.main__wrap {
+	display: none;
+}
 }
